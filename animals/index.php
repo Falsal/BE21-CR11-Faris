@@ -142,7 +142,7 @@ $connect->close();
                     <button class="btn btn-success" type="button">Seniors</button>
                 </a>
                 <a href= "<?php echo 'adopt.php'?>">
-                    <button class="btn btn-dark" type="button">Adoption</button>
+                    <button <?php echo $userFlag; ?> class="btn btn-dark" type="button">Adoption</button>
                 </a>
             </div>
         </div>
