@@ -36,6 +36,9 @@ if($userType=='adm'){
     // echo "<br> userType is : line34".$userType."<br>";
  
 }
+
+//================ disabled state =================
+$disabled='';
 // =============== Back Button ====================
 $backBtn = '';
 //if it is a user it will create a back button to home.php
@@ -57,7 +60,11 @@ if(mysqli_num_rows($result)  > 0) {
     // $admFlag? print_r("admFlag line 55 : ".$admFlag."<--<br>") : print_r ("admFlag line 53 is empty"); 
 
      while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-        //  echo " ..Line60_row[pet_id]  :".$row['pet_id']."<br>";         
+        //  echo " ..Line60_row[pet_id]  :".$row['pet_id']."<br>";    
+         // disabeling the adoption button for users only
+         if($row['status'] =='adopted'){
+            $disabled='disabled';
+         } else{ $disabled='' ;}
         $tbody .= "<tr>
             <td><img class='img-thumbnail' src='" .$row['pet_image']."'</td>
             <td>" .$row['pet_name']."</td>
@@ -78,12 +85,14 @@ if(mysqli_num_rows($result)  > 0) {
                 </a>
                 
                 <a href='adopt.php?id=" .$row['pet_id']."'>
-                <button  $admFlag class='btn btn-success btn-sm' type='button'>Take me home</button>
+                <button  $admFlag class='btn btn-success btn-sm $disabled' type='button'>Take me home</button>
                 </a>
             </td>
          </tr>";
+       
             // echo "...Car ID :".$row['id'];
         };
+
 } else  {
     $tbody =  "<tr><td colspan='5'><center>No Data Available </center></td></tr>";
 }

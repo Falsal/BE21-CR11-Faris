@@ -41,7 +41,10 @@ if($userType=='adm'){
     // echo "<br> line34.. userType is : ".$userType."... and admFlag is :".$admFlag."<br>";
  
 }
+//================ disabled state =================
+$disabled='';
 
+// =============== Back Button ====================
 $backBtn = "index.php";
 
 // ======== fetching data from DB ========= 
@@ -57,6 +60,9 @@ $tbody =''; // initialize var to carry the row/array/columns
 if(mysqli_num_rows($result)  > 0) { 
     //turn result into array
     while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) { 
+        if($row['status'] =='adopted'){
+            $disabled='disabled';
+         } else{ $disabled='' ;}
         $tbody .= "<tr>
             <td><img class='img-thumbnail' src='" .$row['pet_image']."'</td>
             <td>" .$row['pet_name']."</td>
@@ -77,7 +83,7 @@ if(mysqli_num_rows($result)  > 0) {
                 </a>
                 
                 <a href='adopt.php?id=" .$row['pet_id']."'>
-                <button  $admFlag class='btn btn-success btn-sm' type='button'>Take me home</button>
+                <button  $admFlag $disabled class='btn btn-success btn-sm' type='button'>Take me home</button>
                 </a>
             </td>
          </tr>";
