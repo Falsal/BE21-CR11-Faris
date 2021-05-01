@@ -41,13 +41,38 @@ $connect->close();
     </head>
     <body>
         <div class="container">
-            <div class="hero">
-                <img class="userImage" src="pictures/<?php echo $row['picture']; ?>" alt="<?php echo $row['first_name']; ?>">
-                <p class="text-white" >Hi <?php echo $row['first_name']; ?></p>
-            </div>
-            <a href="animals/index.php">animals</a>
-            <a href="logout.php?logout">Sign Out</a>
-            <a href="update.php?id=<?php echo $_SESSION['user'] ?>">Update your profile</a>
+
+        <!-- Background image -->
+        <div
+        class="bg-image"
+        style="
+                background-image: url('pictures/flying_cats.jpg');
+                height: 100vh; "
+        >
+                <div class="test">
+                    <img class="userImage" src="pictures/<?php echo $row['picture']; ?>" alt="<?php echo $row['first_name']; ?>">
+                    <p class="text-success text-bold fs-4" >Hi <?php echo $row['first_name']; ?></p>
+                </div>
+                <a href="animals/index.php">
+                    <button class="btn btn-primary">  
+                    Pets       
+                    </button>
+                </a>
+                <a href="logout.php?logout">
+                    <button class="btn btn-warning">  
+                    Sign Out      
+                    </button>
+                </a>
+                <a href="update.php?id=<?php echo $_SESSION['user'] ?>">
+                    <button class="btn btn-dark">  
+                    Update profile     
+                    </button>                
+                </a>
+        </div>
+        <!-- Background image -->
+
+
+
         </div>
     </body>
 </html>
