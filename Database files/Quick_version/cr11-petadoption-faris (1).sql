@@ -28,7 +28,7 @@ CREATE TABLE `animals` (
 INSERT INTO `animals` (`pet_id`, `pet_name`, `city`, `address`, `zip`, `age`, `description`, `hobbies`, `breed`, `size`, `pet_image`, `status`) VALUES
 (1, 'Carena', 'Santo Tomas', '9443 8th Street', 8112, 4, 'Expanded', 'Picking on smaller birds', 'Corella, long-billed', 'S', 'https://tinyurl.com/6adu8k3z', 'adopted'),
 (2, 'Althea', 'Carmen', '38 8th Court', 9408, 7, 'conglomeration', 'sniffing on neighbours toes', 'Gila monster', 'S', 'https://tinyurl.com/yveresxy', 'available'),
-(3, 'Sebastiano', 'Filimonovo', '405 Fremont Place', 6655, 9, 'methodology', 'Looking tough', 'Boxer', 'L', 'https://tinyurl.com/js2jbze', 'adopted'),
+(3, 'Sebastiano', 'Montreal', '405 Fremont Place', 6655, 7, 'methodology', 'Looking tough', 'Boxer', 'L', 'https://tinyurl.com/js2jbze', 'adopted'),
 (4, 'Cally', 'Limen', '47 Barby Trail', 2003, 7, 'Implemented', 'hanging around the aquarium', 'Yellow-billed stork', 'S', 'https://tinyurl.com/y2narysc', 'available'),
 (5, 'Ciel', 'Chauk', '5 Dakota Pass', 2009, 4, 'middleware', 'Making our cat go crazy', 'Yellow mongoose', 'L', 'https://tinyurl.com/mzvkvbf3', 'available'),
 (6, 'Andres', 'Ivry-sur-Seine', '823 Sachtjen Court', 2001, 14, 'stable', 'Keeping watch on our neighbours', 'British Short Hair', 'S', 'https://tinyurl.com/ec9bcw', 'available'),
@@ -41,7 +41,6 @@ INSERT INTO `animals` (`pet_id`, `pet_name`, `city`, `address`, `zip`, `age`, `d
 (13, 'Pansie', 'Qaţanah', '8 Miller Point', 1984, 10, 'incremental', 'figuring out new access to the garbage can', 'Raccoon, crab-eating', 'S', 'https://tinyurl.com/2fn794m3', 'available'),
 (14, 'Gabie', 'Paços', '6 Vernon Center', 2003, 5, 'open for game suggestions', 'Pushing the metal gate ', 'Buffalo, wild water', 'L', 'https://tinyurl.com/25vuyb9e', 'available'),
 (15, 'Ali', 'Fauske', '22890 Sugar Terrace', 1983, 15, 'he is an adorable busy guy', 'mistaking our ears for juicy source of nektar ', 'Hummingbird', 'S', ' https://tinyurl.com/2dhtv5w2', 'available'),
-(16, 'L;urette', 'Spanish Town', '41 Saint Paul Park', 2002, 28, 'minds his own business; when he is fast asleep ', 'Being foxy around the ladies', 'Silver-backed fox', 'L', 'http://dummyimage.com/156x100.png/cc0000/ffffff', 'available'),
 (18, 'Ginelle', 'Hubei', '609 Manufacturers Park', 2006, 4, 'Cloned from my 95 years old uncle', 'playing with stuff that does not belong to him', 'Monkey, red howler', 'S', 'http://dummyimage.com/107x100.png/5fa2dd/ffffff', 'available'),
 (19, 'Lido', 'Vienna', 'Alserstrasse 18', 1220, 10, 'A well trained dog, loving spirit, very protective of owner.', 'Chewing on rubber chickens and slobering over cats', 'German shepard dog', 'L', 'https://tinyurl.com/n98n7e6x', 'adopted');
 
@@ -56,7 +55,8 @@ INSERT INTO `petadoption` (`id`, `fk_user_id`, `fk_pet_id`) VALUES
 (2, 4, 3),
 (3, 4, 19),
 (6, 3, 7),
-(7, 3, 4);
+(7, 3, 4),
+(8, 7, 2);
 
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
@@ -73,9 +73,9 @@ INSERT INTO `user` (`id`, `first_name`, `last_name`, `password`, `date_of_birth`
 (1, 'Faris', 'Alsalih', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', '2021-04-01', 'falsalih@aol.com', 'avatar.png', 'adm'),
 (2, 'Patrizia', 'Messerschmidt', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', '2001-09-10', 'alex@mail.com', '608be9b2967cc.jpg', 'user'),
 (3, 'Jimmy', 'Dore', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', '2020-07-30', 'jimmy@mail.com', '608a9a5d4768e.jpg', 'user'),
-(4, 'Viktor', 'Frankl', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', '1905-03-26', 'viktor@mail.com', '608be1f515e77.jpg', 'user'),
-(5, 'Nikola', 'Tesla', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', '2020-06-05', 'tesla@mail.com', '608bf1b3a5836.jpg', 'user'),
-(6, 'tester', 'vontesting', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', '2021-03-04', 'tester@mail.com', 'avatar.png', 'user');
+(4, 'Viktor', 'Frankl', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', '1905-03-26', 'viktor@mail.com', '608db2fd4bcf6.jpg', 'user'),
+(5, 'Nikola', 'Tesla', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', '2020-06-05', 'tesla@mail.com', '608db398cf46e.jpg', 'user'),
+(7, 'Layla', 'Alsalih', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', '2021-05-01', 'layla@mail.com', '608db0bfbc93d.jpg', 'user');
 
 
 ALTER TABLE `animals`
@@ -106,10 +106,10 @@ ALTER TABLE `animals`
   MODIFY `pet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 ALTER TABLE `petadoption`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 
 ALTER TABLE `petadoption`
